@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Weatherly</string>
+    <string name="appName">Weatherly</string>
+    <string name="weatherly">Weatherly</string>
+    <string name="weather_mad">Weather made simple</string>
+    <string name="welcomeprom">Welcome to Weatherly. In order to get accurate weather results, please enable location services to get your weather data.</string>
+    <string name="enableLocation">Enable Location</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="feel">Feels Like</string>
+    <string name="uv">UV</string>
+    <string name="forecast">7-Day Forecast</string>
+</resources>

@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherScreen"
+    android:background="@color/design_default_color_background">
+
+    <!-- @color/cardview_light_background-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Location of User-->
+        <TextView
+            android:id="@+id/userLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60sp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:layout_marginLeft="35sp"/>
+
+        <!--Current Date-->
+        <TextView
+            android:id="@+id/theDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60sp"
+            android:layout_toRightOf="@id/userLocation"
+            android:gravity="center_horizontal|center_vertical"
+            android:text=""
+            android:textColor="#7A7A7A"
+            android:textSize="30sp"
+            android:layout_marginLeft="40sp"
+            />
+
+        <!--Current Temperature-->
+        <TextView
+            android:id="@+id/currtemp"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_below="@id/userLocation"
+            android:layout_marginLeft="65sp"
+            android:layout_marginTop="35sp"
+            android:textColor="#020202"
+            android:textSize="40sp" />
+
+        <!--Up Arrow Img-->
+        <ImageView
+            android:id="@+id/upArrowImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/uparrowhigh"
+            android:layout_below="@id/userLocation"
+            android:layout_toRightOf="@id/currtemp"
+            android:layout_marginTop="35sp"
+            android:layout_marginLeft="55sp"/>
+
+        <!--Down Arrow Img-->
+        <ImageView
+            android:id="@+id/downArrowImg"
+            app:srcCompat="@drawable/downarrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/userLocation"
+            android:layout_toRightOf="@id/currtemp"
+            android:layout_marginTop="63sp"
+            android:layout_marginLeft="55sp"/>
+
+        <!--HighTemp Value-->
+        <TextView
+            android:id="@+id/hightemp"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_below="@id/userLocation"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="32sp"
+            android:layout_toRightOf="@id/upArrowImg"
+            android:text=""
+            android:textColor="#FF2400"
+            android:textSize="24sp" />
+
+        <!--LowTemp Value-->
+        <TextView
+            android:id="@+id/lowtemp"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_below="@id/userLocation"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="61sp"
+            android:layout_toRightOf="@id/upArrowImg"
+            android:text=""
+            android:textSize="24sp"
+            android:textColor="#246EE9"/>
+
+        <!--Weather Condition Image-->
+        <ImageView
+            android:id="@+id/img_weatherIcon"
+            android:layout_width="48sp"
+            android:layout_height="48sp"
+            android:layout_below="@id/userLocation"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="20sp"
+            android:layout_toRightOf="@id/hightemp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <!--Weather Description-->
+        <TextView
+            android:id="@+id/weatherdescription"
+            android:layout_width="65dp"
+            android:layout_height="34dp"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_below="@id/theDate"
+            android:layout_toRightOf="@id/lowtemp"
+            android:layout_marginLeft="18sp"
+            android:layout_marginTop="60sp"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <!--Card Effect-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="360sp"
+            android:layout_height="100sp"
+            android:layout_below="@id/currtemp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40sp"
+            app:cardBackgroundColor="#C9CAC9C9"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp">
+
+            <!--Layout to house components-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Humidity Label-->
+                <TextView
+                    android:id="@+id/humidityLabel"
+                    android:layout_width="97sp"
+                    android:layout_height="43sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/humidity"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!--Humidity Symbol-->
+                <ImageView
+                    android:id="@+id/humidImg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/humiditysym"
+                    android:layout_below="@id/humidityLabel"
+                    android:layout_marginLeft="20sp"/>
+
+                <!--Humidity Value-->
+                <TextView
+                    android:id="@+id/humid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_below="@id/humidityLabel"
+                    android:layout_toRightOf="@id/humidImg"
+                    android:layout_marginTop="3sp"/>
+
+                <!--Wind Label-->
+                <TextView
+                    android:id="@+id/windLabel"
+                    android:layout_width="97sp"
+                    android:layout_height="43sp"
+                    android:layout_marginLeft="80sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/wind"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!--Wind Symbol-->
+                <ImageView
+                    android:id="@+id/windImg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/windLabel"
+                    android:layout_marginLeft="60sp"
+                    android:layout_marginTop="3sp"
+                    android:layout_toRightOf="@id/humidImg"
+                    app:srcCompat="@drawable/windsym" />
+
+                <!--Wind Value-->
+                <TextView
+                    android:id="@+id/wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_toRightOf="@id/windImg"
+                    android:layout_below="@id/windLabel"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="2sp"/>
+
+                <!--Feels Like Label-->
+                <TextView
+                    android:id="@+id/feelLabel"
+                    android:layout_width="97sp"
+                    android:layout_height="43sp"
+                    android:text="@string/feel"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_marginLeft="170sp"
+                    />
+
+                <!--Feels Like Symbol-->
+                <ImageView
+                    android:id="@+id/feelsLikeImg"
+                    app:srcCompat="@drawable/feelslikesym"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/feelLabel"
+                    android:layout_marginLeft="60sp"
+                    android:layout_marginTop="3sp"
+                    android:layout_toRightOf="@id/windImg"/>
+
+                <!--Feels Like Value-->
+                <TextView
+                    android:id="@+id/feelslike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_toRightOf="@id/feelsLikeImg"
+                    android:layout_below="@id/feelLabel"
+                    android:layout_marginTop="2sp"/>
+
+                <!--UV Label-->
+                <TextView
+                    android:id="@+id/uvLabel"
+                    android:layout_width="97sp"
+                    android:layout_height="43sp"
+                    android:text="@string/uv"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_marginLeft="250sp"
+                    />
+
+                <!--UV Symbol-->
+                <ImageView
+                    android:id="@+id/uvImg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/uvLabel"
+                    android:layout_marginLeft="75sp"
+                    android:layout_marginTop="3sp"
+                    android:layout_toRightOf="@id/feelsLikeImg"
+                    app:srcCompat="@drawable/uvsym" />
+
+                <!--UV Value-->
+                <TextView
+                    android:id="@+id/uv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/uvLabel"
+                    android:layout_marginLeft="2sp"
+                    android:layout_marginTop="2sp"
+                    android:layout_toRightOf="@id/uvImg"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--Forecast Cardview-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="360sp"
+            android:layout_height="360sp"
+            android:layout_below="@id/cardView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10sp"
+            app:cardBackgroundColor="#C9CAC9C9"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--7-day Forecast Label-->
+                <TextView
+                    android:id="@+id/forecastLabel"
+                    android:layout_width="108sp"
+                    android:layout_height="43sp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/forecast"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+
+                <!--Table of Weather Forecast Data-->
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/forecastLabel">
+
+                    <!--Day 0 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15sp">
+
+                        <!--Day 0 name-->
+                        <TextView
+                            android:id="@+id/day0Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text="Today"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 0 Image-->
+                        <ImageView
+                            android:id="@+id/day0Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 0 Description-->
+                        <TextView
+                            android:id="@+id/day0Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 0 Low-->
+                        <TextView
+                            android:id="@+id/day0low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 0 Dash-->
+                        <TextView
+                            android:id="@+id/day0dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 0 High-->
+                        <TextView
+                            android:id="@+id/day0high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+
+
+                    <!--Day 1 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15sp">
+
+                        <!--Day 1 name-->
+                        <TextView
+                            android:id="@+id/day1Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 1 Image-->
+                        <ImageView
+                            android:id="@+id/day1Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 1 Description-->
+                        <TextView
+                            android:id="@+id/day1Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 1 Low-->
+                        <TextView
+                            android:id="@+id/day1low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 1 Dash-->
+                        <TextView
+                            android:id="@+id/day1dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 1 High-->
+                        <TextView
+                            android:id="@+id/day1high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+
+                    <!--Day 2 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15sp">
+
+                        <!--Day 2 name-->
+                        <TextView
+                            android:id="@+id/day2Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 2 Image-->
+                        <ImageView
+                            android:id="@+id/day2Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 2 Description-->
+                        <TextView
+                            android:id="@+id/day2Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 2 Low-->
+                        <TextView
+                            android:id="@+id/day2low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 2 Dash-->
+                        <TextView
+                            android:id="@+id/day2dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 2 High-->
+                        <TextView
+                            android:id="@+id/day2high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+
+                    <!--Day 3 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15sp">
+
+                        <!--Day 3 name-->
+                        <TextView
+                            android:id="@+id/day3Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 3 Image-->
+                        <ImageView
+                            android:id="@+id/day3Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 3 Description-->
+                        <TextView
+                            android:id="@+id/day3Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 3 Low-->
+                        <TextView
+                            android:id="@+id/day3low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 3 Dash-->
+                        <TextView
+                            android:id="@+id/day3dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 3 High-->
+                        <TextView
+                            android:id="@+id/day3high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+
+                    <!--Day 4 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15sp">
+
+                        <!--Day 4 name-->
+                        <TextView
+                            android:id="@+id/day4Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 4 Image-->
+                        <ImageView
+                            android:id="@+id/day4Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 4 Description-->
+                        <TextView
+                            android:id="@+id/day4Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 4 Low-->
+                        <TextView
+                            android:id="@+id/day4low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 4 Dash-->
+                        <TextView
+                            android:id="@+id/day4dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 4 High-->
+                        <TextView
+                            android:id="@+id/day4high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+
+                    <!--Day 5 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15sp">
+
+                        <!--Day 5 name-->
+                        <TextView
+                            android:id="@+id/day5Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 5 Image-->
+                        <ImageView
+                            android:id="@+id/day5Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 5 Description-->
+                        <TextView
+                            android:id="@+id/day5Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 5 Low-->
+                        <TextView
+                            android:id="@+id/day5low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 5 Dash-->
+                        <TextView
+                            android:id="@+id/day5dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 5 High-->
+                        <TextView
+                            android:id="@+id/day5high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+
+                    <!--Day 6 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="15sp">
+
+                        <!--Day 6 name-->
+                        <TextView
+                            android:id="@+id/day6Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 6 Image-->
+                        <ImageView
+                            android:id="@+id/day6Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 6 Description-->
+                        <TextView
+                            android:id="@+id/day6Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 6 Low-->
+                        <TextView
+                            android:id="@+id/day6low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 6 Dash-->
+                        <TextView
+                            android:id="@+id/day6dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 6 High-->
+                        <TextView
+                            android:id="@+id/day6high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+
+                    <!--Day 7 Row-->
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!--Day 7 name-->
+                        <TextView
+                            android:id="@+id/day7Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15sp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!--Day 7 Image-->
+                        <ImageView
+                            android:id="@+id/day7Icon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/clearsunny"
+                            android:layout_marginLeft="15sp"/>
+
+                        <!--Day 7 Description-->
+                        <TextView
+                            android:id="@+id/day7Descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 7 Low-->
+                        <TextView
+                            android:id="@+id/day7low"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#246EE9"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="20sp"/>
+
+                        <!--Day 7 Dash-->
+                        <TextView
+                            android:id="@+id/day7dash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textSize="18sp"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="5sp"
+                            />
+
+                        <!--Day 7 High-->
+                        <TextView
+                            android:id="@+id/day7high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#FF2400"
+                            android:textSize="18sp"
+                            android:layout_marginLeft="5sp"/>
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+
+    <!--Print out all of weather data for testing
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@id/theDate"
+        android:layout_marginLeft="25sp"
+        /> -->
+
+</RelativeLayout>

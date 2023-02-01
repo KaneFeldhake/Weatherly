@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/bgGray">
+
+    <!-- Logo -->
+    <View
+        android:id="@+id/logo"
+        android:layout_width="122dp"
+        android:layout_height="122dp"
+        android:background="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35sp"
+        />
+
+
+    <!-- Weatherly Title -->
+    <TextView
+        android:id="@+id/weatherly"
+        android:layout_width="247dp"
+        android:layout_height="96dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5sp"
+        android:fontFamily="@font/gabriola"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="-24sp"
+        android:text="@string/weatherly"
+        android:textAppearance="@style/weatherly"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Weather made simple -->
+    <TextView
+        android:id="@+id/weather_mad"
+        android:layout_width="247dp"
+        android:layout_height="96dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="65dp"
+        android:fontFamily="@font/gabriola"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="-13sp"
+        android:text="@string/weather_mad"
+        android:textAppearance="@style/weather_mad" />
+
+    <!--Welcome Prompt -->
+    <TextView
+        android:id="@+id/welcomeprom"
+        android:layout_width="253dp"
+        android:layout_height="118dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="1sp"
+        android:text="@string/welcomeprom"
+        android:textAppearance="@style/welcomeprom"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/weather_mad"/>
+
+    <Button
+        android:id="@+id/understandb"
+        android:layout_width="165dp"
+        android:layout_height="67dp"
+        android:layout_below="@id/welcomeprom"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/understandbtnstyle"
+        android:text="@string/enableLocation"
+        android:textAllCaps="false"
+        android:layout_marginTop="15sp"
+        android:textSize="17sp"/>
+
+
+</RelativeLayout>
