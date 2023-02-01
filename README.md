@@ -2,7 +2,7 @@
 Weatherly is a Android-based mobile application developed using Android Studio w/ Java. It contains a very elegant and simple-to-use UI that renders real-time weather data from the OpenWeatherMapAPI. The app gets user's location via GoogleMapsAPI.
 
 The app was designed to expand my knowledge on the use of :
-  :black_medium_square: API's (Google Maps and OpenWeatherAPI)
+  - API's (Google Maps and OpenWeatherAPI)
   - UI/UX
   - Object Oriented Programming
   - Gathering information about a user
