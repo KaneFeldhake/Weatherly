@@ -21,7 +21,10 @@ Upcoming Features:
 Since projects that are developed on Android Studio are emulator based, it makes running the project difficult. The emulator in Android Studio set its default location to somewhere that is not the user location automatically. With some adjustment, the user can work around this by changing individual location settings locally. Because of this issue, I have provided screenshots of the app. 
 
 
+## Screenshots of Weatherly
 ![image](https://user-images.githubusercontent.com/72562848/215914787-0b924c26-6be1-4a6b-affc-c8911626734c.png)![image](https://user-images.githubusercontent.com/72562848/215915300-4283aec4-02ce-4280-b64f-94469d54eae2.png)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![image](https://user-images.githubusercontent.com/72562848/215914632-b0c952da-2ffa-4292-a4c1-b209056e9d46.png)
 
