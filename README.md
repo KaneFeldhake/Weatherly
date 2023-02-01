@@ -22,7 +22,7 @@ Since projects that are developed on Android Studio are emulator based, it makes
 
 
 ## Screenshots of Weatherly
-![image](https://user-images.githubusercontent.com/72562848/215914787-0b924c26-6be1-4a6b-affc-c8911626734c.png)![image](https://user-images.githubusercontent.com/72562848/215915300-4283aec4-02ce-4280-b64f-94469d54eae2.png)
+![image](https://user-images.githubusercontent.com/72562848/215914787-0b924c26-6be1-4a6b-affc-c8911626734c.png)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
